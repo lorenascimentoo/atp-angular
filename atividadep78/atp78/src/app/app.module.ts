@@ -7,6 +7,7 @@ import { ClienteListaComponent } from './cliente-lista/cliente-lista.component';
 import { TpClienteListaComponent } from './tp-cliente-lista/tp-cliente-lista.component';
 import { TpClienteCadastroComponent } from './tp-cliente-cadastro/tp-cliente-cadastro.component';
 import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
