@@ -1,8 +1,8 @@
 <body>
     <div class="conteudo">
         <h1 class="titulo-principal">Lista de Clientes</h1>
-    
-        <table>
+
+        <table *ngIf="lista.length > 0; else listaVazia">
             <thead>
                 <tr>
                     <th>id</th>
@@ -12,13 +12,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>teste</td>
-                    <td>1111111111</td>
-                    <td>premium</td>
+                <tr *ngFor="let c of lista">
+                    <td>{{c.id}}</td>
+                    <td>{{c.nome}}</td>
+                    <td>{{c.cpf}}</td>
+                    <td>{{c.tipoCliente.id}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
 </body>
+
+<ng-template #listaVazia>
+  <p class="conteudo">Nenhum dado está cadastrado.</p>
+</ng-template>

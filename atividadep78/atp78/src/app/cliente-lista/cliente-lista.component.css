@@ -41,3 +41,8 @@ table tbody tr {
     text-align: center;
     text-transform: uppercase;
 }
+
+p{
+  text-align: center;
+  margin: 20px;
+}
