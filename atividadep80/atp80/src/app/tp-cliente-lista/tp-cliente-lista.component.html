@@ -1,0 +1,23 @@
+<body>
+    <div class="conteudo">
+        <h1 class="titulo-principal">Tipos de Clientes</h1>
+
+        <table *ngIf="lista.length>0;else listaVazia">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>status</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of lista">
+                    <td>{{t.id}}</td>
+                    <td>{{t.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<ng-template #listaVazia>
+  <p class="conteudo">Nenhum dado está cadastrado.</p>
+</ng-template>
