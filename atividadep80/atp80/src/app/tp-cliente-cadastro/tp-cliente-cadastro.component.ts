@@ -16,8 +16,11 @@ export class TpClienteCadastroComponent implements OnInit {
   }
 
   salvar(){
-   this.tpcService.create(this.tipocliente);
-   this.limpar();
+   this.tpcService.create(this.tipocliente).subscribe( (msg) =>{
+        alert(msg);
+        this.limpar();
+      }
+    );
   }
 
   private limpar(){

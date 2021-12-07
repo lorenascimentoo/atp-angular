@@ -18,6 +18,6 @@ export class ClienteListaComponent implements OnInit {
   }
 
   private listar(){
-    this.lista = this.clienteService.read();
+    this.clienteService.read().subscribe( (clientes) => this.lista=clientes);
   }
 }

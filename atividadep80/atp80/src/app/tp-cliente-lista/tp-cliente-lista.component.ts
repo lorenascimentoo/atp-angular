@@ -18,7 +18,6 @@ export class TpClienteListaComponent implements OnInit {
   }
 
   private listar(){
-    this.lista = this.tpcService.read();
-    console.log(this.lista);
+    this.tpcService.read().subscribe( (tipos_cliente) => this.lista=tipos_cliente);
   }
 }

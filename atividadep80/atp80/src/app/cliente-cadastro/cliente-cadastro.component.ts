@@ -1,3 +1,4 @@
+import { TipoCliente } from './../model/TipoCliente';
 import { Cliente } from './../model/Cliente';
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../services/cliente.service';
@@ -9,18 +10,23 @@ import { ClienteService } from '../services/cliente.service';
 })
 export class ClienteCadastroComponent implements OnInit {
   cliente = {} as Cliente;
+  tipocliente = {} as TipoCliente;
 
   constructor(private clienteService:ClienteService) { }
 
   ngOnInit(): void {
   }
   salvar(){
-    this.clienteService.create(this.cliente);
-    console.log(this.cliente);
-    this.limpar();
+    this.cliente.tipoCliente = this.tipocliente;
+    this.clienteService.create(this.cliente).subscribe( (msg) => {
+      alert(msg);
+      this.limpar();
+    }
+    );
   }
 
   private limpar(){
     this.cliente = {} as Cliente;
+    this.tipocliente = {} as TipoCliente;
   }
 }
