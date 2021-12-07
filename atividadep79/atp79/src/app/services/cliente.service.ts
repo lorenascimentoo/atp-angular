@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
+import { Cliente } from '../model/Cliente';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
-  private lista:any[];
+  private lista:Cliente[];
   constructor() {
     this.lista = [];
   }
 
-  create(cliente:any):void{
+  create(cliente:Cliente):void{
     this.lista.push(cliente);
   }
 
-  read():any[]{
+  read():Cliente[]{
     return this.lista;
   }
 }

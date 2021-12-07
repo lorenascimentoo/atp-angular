@@ -4,9 +4,9 @@
             <p>Preencha os dados do tipo para cliente:</p>
         <form (ngSubmit)="salvar()">
           <label class="labels" for="id">ID</label>
-            <input type="text" id="id" name="id" [(ngModel)]="id"/><br>
+            <input type="text" id="id" name="id" [(ngModel)]="tipocliente.id"/><br>
             <label class="labels" for="status">Status</label>
-            <input type="text" id="status" name="status" [(ngModel)]="status"/><br>
+            <input type="text" id="status" name="status" [(ngModel)]="tipocliente.status"/><br>
             <input type="submit" value="Cadastrar">
         </form>
     </div>

@@ -1,19 +1,19 @@
+import { TipoCliente } from './../model/TipoCliente';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TipoClienteService {
-  private lista:any[];
+  private lista:TipoCliente[] =[];
   constructor() {
-    this.lista = [];
    }
 
-   create(tipoCliente : any):void{
+   create(tipoCliente : TipoCliente):void{
       this.lista.push(tipoCliente);
    }
 
-   read():any[]{
+   read():TipoCliente[]{
       return this.lista;
    }
 }

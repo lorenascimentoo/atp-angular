@@ -1,3 +1,4 @@
+import { TipoCliente } from './../model/TipoCliente';
 import { Component, OnInit } from '@angular/core';
 import { TipoClienteService } from '../services/tipo-cliente.service';
 
@@ -7,10 +8,9 @@ import { TipoClienteService } from '../services/tipo-cliente.service';
   styleUrls: ['./tp-cliente-lista.component.css']
 })
 export class TpClienteListaComponent implements OnInit {
-  lista:any[];
+  lista:TipoCliente[] = [];
 
   constructor(private tpcService: TipoClienteService) {
-    this.lista=[];
     this.listar();
    }
 
